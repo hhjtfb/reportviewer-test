@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfReportTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:my1="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+        Title="MainWindow" Height="550" Width="725"
+        >
+    <Grid>
+        <WrapPanel Margin="15,10,12,0" Height="36" VerticalAlignment="Top">
+            <Label Content="查询时段: " Margin="5,5,0,5" VerticalContentAlignment="Center" />
+            
+            <Label Name="label1" Height="28" Content="至" />
+            
+            <Button Name="btnRpt" Content="报表输出" Height="25" Width="72" Click="btnRpt_Click" />
+        </WrapPanel>
+        <TabControl Name="rptTab" Margin="10,56,12,12">
+            <TabItem Header="统计报表">
+                <DockPanel>
+                    <GroupBox BorderBrush="#FF00008B" BorderThickness="1" Foreground="#FF00008B" Header="报表输出" Margin="2">
+                        <WindowsFormsHost Background="#FFF5FFFA" Margin="3">
+                            <my1:ReportViewer x:Name="_reportViewer" />
+                        </WindowsFormsHost>
+                    </GroupBox>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
